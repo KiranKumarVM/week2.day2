@@ -18,8 +18,12 @@ public class Image {
 		driver.findElement(By.xpath("//label[text()='Click on this image to go home page']/following-sibling::img")).click();
 		driver.findElement(By.xpath("//h5[text()='Image']")).click();
         
-		driver.findElement(By.xpath("//label[text()='Am I Broken Image?']")).click();
-        //broken Image
+		driver.findElement(By.xpath("//label[text()='Am I Broken Image?']"));
+                String title = driver.getTitle();
+		if(title.contains("Images.html"))
+			System.out.println("Broken");
+		else
+			System.out.println("Not broken");
 		
 		driver.findElement(By.xpath("//label[text()='Click me using Keyboard or Mouse']/following-sibling::im")).click();
 		driver.findElement(By.xpath("//h5[text()='Image']")).click();		
