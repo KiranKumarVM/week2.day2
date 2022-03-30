@@ -1,5 +1,6 @@
 package week2.day2;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,7 +17,7 @@ public class FaceBook {
 		ChromeDriver driver=new ChromeDriver();
 		driver.get("https://en-gb.facebook.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Create New Account')]")).click();
 		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Sai");
@@ -38,3 +39,4 @@ public class FaceBook {
 	}
 
 }
+
